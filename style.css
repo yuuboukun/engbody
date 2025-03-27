@@ -54,12 +54,17 @@ dl, dd, dt {
     width: 186px;
     text-decoration: none;
     font-weight: 700;
+    transition: transform .3s;
 }
 @media (min-width: 768px) {
     .btn {
         width: min(24.2vw, 250px);
         padding: min(1.3vw, 15px);
     }
+}
+.btn:hover {
+    opacity: .8;
+    transform: scale(1.02);
 }
 .btn--center {
     margin: auto;
@@ -606,6 +611,11 @@ dl, dd, dt {
     height: 40px;
     border-radius: 50%;
     background-color: #fff;
+    transition: all .3s;
+}
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: #ffe1f682;
 }
 @media (min-width: 798px) {
     .swiper-button-next,
@@ -893,6 +903,11 @@ CTA Join
     right: 20px;
     bottom: 20px;
     z-index: 100;
+    transition: opacity .6s;
+}
+.to-top__wrap:hover {
+    opacity: .8;
+    transform: scale(1.05);
 }
 .to-top {
     display: grid;
@@ -902,12 +917,28 @@ CTA Join
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.8);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 .to-top .bi {
     line-height: 0;
     font-size: 28px;
     color: #EB51C2;
 }
-
-
+.to-top.show {
+    opacity: 0.8;
+}
+@media (min-width: 768px) {
+    .to-top__wrap {
+        right: 35px;
+        bottom: 35px;
+    }
+    .to-top {
+        width: 60px;
+        height: 60px;
+    }
+    .to-top .bi {
+        font-size: 38px;
+    }
+}
 

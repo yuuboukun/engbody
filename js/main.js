@@ -70,19 +70,18 @@ $('.faq__question').on('click', function () {
     $(this).next('dd').slideToggle();
 });
 
-// トップへ
+// ページトップへ戻る
 const toTop = $('.to-top');
 $(window).scroll(function () {
     if ($(this).scrollTop() > 300) {
-        toTop.stop(true, true).fadeIn();
+        toTop.addClass('show');
     } else {
-        toTop.stop(true, true).fadeOut();
+        toTop.removeClass('show');
     }
 });
 toTop.on('click', function (e) {
-    e.preventDefault(); 
+    e.preventDefault();
     $('html, body').animate({
-        scrollTop: 0,
+        scrollTop: 0
     }, 300);
-    return false;
 });
